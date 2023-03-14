@@ -7,13 +7,19 @@ on:
     branches: [ "master" ]
   pull_request:
     branches: [ "master" ]
-  workflow_call:
-    inputs:
-      username:
-        description: 'A username passed from the caller workflow'
-        default: 'Nidhi Sharma'
-        required: false
-        type: string
+  workflow_dispatch:
+      inputs:
+        int1:
+          description: 'Enter first no'     
+          required: true
+    
+        int2:
+          description: 'Enter second no'     
+          required: true
+env:
+  a: ${{github.event.inputs.int1}}
+  b: ${{github.event.inputs.int2}}
+
 
   # Allows you to run this workflow manually from the Actions tab
   workflow_dispatch:
@@ -60,6 +66,7 @@ jobs:
   job3:
     runs-on: windows-latest
     steps:
-      - name: Print input
-        run: echo username is ${{ inputs.username }}
+      - run:  |
+          cd pythonfile
+          python Pythonfile/func.py $a $b
 
