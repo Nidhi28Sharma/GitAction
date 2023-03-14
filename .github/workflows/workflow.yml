@@ -10,11 +10,13 @@ on:
   workflow_dispatch:
       inputs:
         int1:
-          description: 'Enter first no'     
+          description: 'Enter first no'  
+          default: 22   
           required: true
     
         int2:
-          description: 'Enter second no'     
+          description: 'Enter second no'  
+          default: 44   
           required: true
 env:
   a: ${{github.event.inputs.int1}}
