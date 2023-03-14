@@ -7,7 +7,7 @@ on:
     branches: [ "master" ]
   pull_request:
     branches: [ "master" ]
-  
+  workflow_call:
     inputs:
       username:
         description: 'A username passed from the caller workflow'
