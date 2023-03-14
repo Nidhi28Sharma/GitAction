@@ -71,5 +71,5 @@ jobs:
         with:
           python-version: '3.10' 
      
-      - run: python Pythonfile/func.py $a $b
+      - run: python Pythonfile/func.py 458
 
