@@ -58,9 +58,8 @@ jobs:
           python-version: '3.10' 
       - run: python main2.py
 
-    job3:
-    runs-on: ubuntu-latest
-
+  job3:
+    runs-on: windows-latest
     steps:
       - name: Print the input name to STDOUT
         run: echo The username is ${{ inputs.username }}
